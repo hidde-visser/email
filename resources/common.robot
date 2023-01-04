@@ -17,7 +17,7 @@ ${RECIPIENT}                    hvisser@copado.com
 *** Keywords ***
 Send Email
     [Arguments]                 ${SUBJECT}                  ${BODY}
-    Authorize                   account=${SENDER}           password=Z6gKZ^GV%*euSzD%wLP
+    Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
     Send Message                sender=${SENDER}
     ...                         recipients=${RECIPIENT}
     ...                         subject=${SUBJECT}
@@ -25,7 +25,7 @@ Send Email
 
 Get Messages Where Subject Contains
     [Arguments]                 ${subject}
-    Authorize                   account=${SENDER}           password=Z6gKZ^GV%*euSzD%wLP
+    Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
     @{emails}=                  List Messages               SUBJECT "${subject}"
     FOR                         ${email}                    IN                          @{emails}
         Log                     ${email}[Subject]
