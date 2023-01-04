@@ -29,12 +29,12 @@ Get Messages Where Subject Contains
     @{emails}=                  List Messages               SUBJECT "${subject}"
     FOR                         ${email}                    IN                          @{emails}
         Log                     ${email}[Subject]
-        # Log                   ${email}[From]
-        # Log                   ${email}[Date]
-        # Log                   ${email}[Received]
-        # Log                   ${email}[Has-Attachments]
+        Log                     ${email}[From]
+        Log                     ${email}[Date]
+        Log                     ${email}[Received]
+        Log                     ${email}[Has-Attachments]
     END
-    RETURN                      ${email}[Subject]
+    RETURN                      @{emails}
 
 Setup Browser
     # Setting search order is not really needed here, but given as an example
