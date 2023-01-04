@@ -26,7 +26,7 @@ Send Email
 Get Messages Where Subject Contains
     [Arguments]                 ${subject}
     Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
-    @{emails}=                  List Messages               SUBJECT "${subject}"    source_folder=Sent
+    @{emails}=                  List Messages               SUBJECT "${subject}"    source_folder=[Gmail]\/Verzonden berichten
     FOR                         ${email}                    IN                          @{emails}
         Log                     ${email}[Subject]
         Log                     ${email}[From]
