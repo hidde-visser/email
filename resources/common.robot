@@ -44,12 +44,13 @@ Setup Browser
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
 
-Get Folder List
+testgetfolderlist
     Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
     @{folders}=                 Get Folder List
     FOR                         ${folder}                    IN                          @{folders}
         Log              ${folder}
     END
+    RETURN               @{folders}
 
 End suite
     Close All Browsers
