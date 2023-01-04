@@ -20,4 +20,4 @@ Check if message excist in inbox
     #Should Contain     ${mailSubject}              ${SUBJECT}
 
 GetFolders
-    Get Folder List
+    ${folderlijst}=  testgetfolderlist
