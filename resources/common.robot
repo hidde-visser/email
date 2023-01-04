@@ -7,11 +7,11 @@ Library                         RPA.Robocorp.Vault
 
 *** Variables ***
 ${BROWSER}                      chrome
-${SENDER}                       robert.striekwold@gmail.com
+${SENDER}                       hidde.visser2@gmail.com
 #This needs to be an APP password generated in your gmail account from sender
 #stored the value in a suite variable
 ${APPPASSGMAIL}
-${RECIPIENT}                    rstriekwold@copado.com
+${RECIPIENT}                    hvisser@copado.com
 
 
 *** Keywords ***
