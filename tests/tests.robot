@@ -18,3 +18,6 @@ Check if message excist in inbox
     ${mailSubject}=    Get Messages Where Subject Contains                     test_mail
     Log To Console      ${mailSubject}
     #Should Contain     ${mailSubject}              ${SUBJECT}
+
+GetFolders
+    Get Folder List
