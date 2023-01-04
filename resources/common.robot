@@ -46,8 +46,10 @@ Setup Browser
 
 Get Folder List
     Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
-    @{folders}  Get Folder List
-    Log To Console              @{folders}
+    @{folders}=                 Get Folder List
+    FOR                         ${folder}                    IN                          @{folders}
+        Log              ${folder}
+    END
 
 End suite
     Close All Browsers
