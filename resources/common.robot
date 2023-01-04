@@ -31,7 +31,7 @@ Get Messages Where Subject Contains
         Log                     ${email}[Subject]
         Log                     ${email}[From]
         Log                     ${email}[Date]
-        Log                     ${email}[Received]
+        #Log                     ${email}[Received]
         Log                     ${email}[Has-Attachments]
     END
     RETURN                      @{emails}
