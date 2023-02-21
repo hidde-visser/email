@@ -26,12 +26,12 @@ Send Email
 Get Messages Where Subject Contains
     [Arguments]                 ${subject}
     Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
-    @{emails}=                  List Messages               SUBJECT "${subject}"    source_folder=[Gmail]\/Verzonden berichten
+    @{emails}=                  List Messages               SUBJECT "${subject}"        source_folder=[Gmail]\/Verzonden berichten
     FOR                         ${email}                    IN                          @{emails}
         Log                     ${email}[Subject]
         Log                     ${email}[From]
         Log                     ${email}[Date]
-        #Log                     ${email}[Received]
+        #Log                    ${email}[Received]
         Log                     ${email}[Has-Attachments]
     END
     RETURN                      @{emails}
@@ -47,10 +47,10 @@ Setup Browser
 testgetfolderlist
     Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
     @{folders}=                 Get Folder List
-    FOR                         ${folder}                    IN                          @{folders}
-        Log              ${folder}
+    FOR                         ${folder}                   IN                          @{folders}
+        Log                     ${folder}
     END
-    RETURN               @{folders}
+    RETURN                      @{folders}
 
 End suite
     Close All Browsers
