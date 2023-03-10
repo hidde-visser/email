@@ -54,3 +54,9 @@ testgetfolderlist
 
 End suite
     Close All Browsers
+
+Another test being added
+    [Documentation]
+    [Arguments]
+     ClickText    Test
+    ClickText     Test2
