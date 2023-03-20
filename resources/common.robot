@@ -17,7 +17,7 @@ ${RECIPIENT}                    recipient_here
 *** Keywords ***
 Send Email
     [Arguments]                 ${SUBJECT}                  ${BODY}
-    Authorize                   account=${SENDER}           password=${APPPASSGMAIL}
+    Authorize                   account=hidde.copado@gmail.com           password=o j g x q l k q s s p u m x b f
     Send Message                sender=${SENDER}
     ...                         recipients=${RECIPIENT}
     ...                         subject=${SUBJECT}
