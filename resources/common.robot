@@ -11,7 +11,7 @@ ${SENDER}                       sender_here
 #This needs to be an APP password generated in your gmail account from sender
 #stored the value in a suite variable
 #${APPPASSGMAIL}
-${RECIPIENT}                    recipient_here
+${RECIPIENT}                    hidde.visser2@gmail.com
 
 
 *** Keywords ***
