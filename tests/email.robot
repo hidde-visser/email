@@ -14,7 +14,7 @@ ${subject}         your gmail subject line here   # Arriving Email subject line
 *** Test Cases ***
 Email Verification
     [Documentation]    Sample test to read links from email message in Gmail
-    @{links}=   get_email_link    email=${email}   pwd=${app_pass}   subject="Fwd: Document for your Signature"    EmailStart
+    @{links}=   get_email_links    email=${email}   pwd=${app_pass}   subject="Fwd: Document for your Signature"    EmailStart
     Log To Console                 ${links}[0]
     # Goto  ${links}[0]
      FOR  ${link}  IN  @{links}
