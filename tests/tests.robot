@@ -1,10 +1,12 @@
 *** Settings ***
 Resource               ../resources/common.robot
+Library                     ../libraries/gmail.py
 Library                QWeb
 Suite Setup            Setup Browser
 Suite Teardown         Close All Browsers
 Library                String
 Library                DateTime
+
 
 # https://robocorp.com/docs/development-guide/email/sending-emails-with-gmail-smtp
 *** Test Cases ***
@@ -21,3 +23,42 @@ Check if message excist in inbox
 
 GetFolders
     ${folderlijst}=    testgetfolderlist
+
+Read Email body
+    Authorize                   account=hidde.copado@gmail.com           password=o j g x q l k q s s p u m x b f
+    ${actions}=   Create List  msg_unread
+    ${test_mes}=   Do Message Actions    SUBJECT "Herstelmailadres geverifieerd"
+    ...                   ${actions}
+    ...                   source_folder=INBOX
+
+    Log To Console  ${test_mes}
+
+
+Get Messages Where Subject Contains
+    [Arguments]    ${subject}
+    ${pattern}  Set Variable       enter the security code:(.*)/n
+    @{emails}=    List Messages    SUBJECT "Fwd: Document for your Signature"
+    FOR    ${email}    IN    @{emails}
+        # Log    ${email}[Subject]
+        # Log    ${email}[From]
+        # Log    ${email}[Date]
+        # Log    ${email}[Received]
+        #  Log To Console       ${email}[Body]
+        # Log    ${email}[Has-Attachments]
+        # ${str}=    ${email}[Body]
+        # ${Id}=    split string    ${email}[Body]    security code:    max_split=1
+        # log to console    ${Id}    #prints 7939
+        ${lineNr}=  Get Lines Containing String   ${email}[Body]    and enter the security code:
+        Log To Console       ${lineNr}
+        Log To Console       ${email}[Body]
+        ${code}=  Get Regexp Matches  ${email}       ${pattern}
+        log to console  ${code}
+    END
+
+    # Log To Console    @{emails}
+
+Open docusign
+    GoTo    https://demo.docusign.net/Member/authenticate.aspx
+    
+Get string
+    @{links}=   Get Email Links    email=hidde.copado@gmail.com   pwd=o j g x q l k q s s p u m x b f   subject="Fwd: Document for your Signature"
