@@ -1,6 +1,6 @@
 *** Settings ***
 Resource               ../resources/common.robot
-Library                     ../libraries/gmail.py
+Library                ../libraries/gmail.py
 Library                QWeb
 Suite Setup            Setup Browser
 Suite Teardown         Close All Browsers
