@@ -23,3 +23,8 @@ Email Verification
             BREAK
         END 
     END
+
+check new email
+    [Documentation]
+    [Tags]
+    Poll For Update    email=${email}    pwd=${app_pass}    subject="Test Hidde"
