@@ -35,3 +35,9 @@ def poll_for_update(email, pwd, subject, folder='INBOX'):
                 return (msg.date, msg.subject)
         else:
             return ('no updates in 60 sec')        
+
+def get_messages(email, pwd, subject, folder='INBOX')
+    # Get date, subject and body len of all emails from INBOX folder
+    with MailBox('imap.gmail.com').login(email, pwd) as mailbox:
+        for msg in mailbox.fetch():
+            print(msg.date, msg.subject, len(msg.text or msg.html))
