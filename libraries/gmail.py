@@ -33,5 +33,5 @@ def poll_for_update(email, pwd, subject, folder='INBOX'):
         if responses:
             for msg in mailbox.fetch(A(seen=False)):
                 return (msg.date, msg.subject)
-                else:
-                return ('no updates in 60 sec')        
+        else:
+            return ('no updates in 60 sec')        
