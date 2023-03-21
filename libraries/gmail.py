@@ -39,8 +39,11 @@ def poll_for_update(email, pwd, folder='INBOX'):
                 links = []
                 for link in soup.findAll('a', attrs={'href': re.compile("^https://")}):
                     links.append(link.get('href'))
-
-                return links
+                
+                for url in links:
+                    if urlSearchText in url:
+                        return    url
+                return ('Url Not Found...')
         else:
             return ('no updates in 60 sec')        
 
