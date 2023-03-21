@@ -7,9 +7,9 @@ Test Setup                  Open Browser  about:blank  chrome
 # imap.gmail.com:993
 
 *** Variables ***
-${app_password}    your google app password here  # https://support.google.com/mail/answer/185833?hl=en
-${email}           your gmail address here        # firstname.lastname@gmail.com etc.
-${subject}         your gmail subject line here   # Arriving Email subject line
+${app_password}    # https://support.google.com/mail/answer/185833?hl=en  //Create suite variable for this
+${email}           # firstname.lastname@gmail.com //Stored as suite variable
+${subject}         # Arriving Email subject line
 
 *** Test Cases ***
 Email Verification
