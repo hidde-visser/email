@@ -33,7 +33,7 @@ def poll_for_update(email, pwd, folder='INBOX'):
         if responses:
             for msg in mailbox.fetch(A(seen=False)):
                 #return (msg.subject)
-                bodies = [msg.html for msg in mailbox.fetch(AND(subject=subject), reverse = True)]
+                bodies = [msg.html for msg in mailbox.fetch(AND(subject=msg.subject), reverse = True)]
 
                 soup = BeautifulSoup(str(bodies))
                 links = []
