@@ -25,3 +25,13 @@ def get_email_links(email, pwd, subject, folder='INBOX'):
 #     for link in soup.findAll('a', attrs={'href': re.compile("^https://")}):
 #         if linkText in link:
 #             return link.get('href')
+
+def poll_for_update(email, pwd, subject, folder='INBOX')
+# waiting for updates 60 sec, print unseen immediately if any update
+    with MailBox('imap.gmail.com').login(email, pwd, folder) as mailbox:
+        responses = mailbox.idle.wait(timeout=60)
+        if responses:
+            for msg in mailbox.fetch(A(seen=False)):
+                print(msg.date, msg.subject)
+                else:
+                print('no updates in 60 sec')        
