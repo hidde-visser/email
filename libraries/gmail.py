@@ -32,7 +32,7 @@ def poll_for_update(email, pwd, folder='INBOX'):
         responses = mailbox.idle.wait(timeout=300)
         if responses:
             for msg in mailbox.fetch(A(seen=False)):
-                return (msg.date, msg.subject)
+                return (msg.subject)
         else:
             return ('no updates in 60 sec')        
 
