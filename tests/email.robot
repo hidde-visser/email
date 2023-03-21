@@ -27,5 +27,7 @@ Email Verification
 check new email
     [Documentation]
     [Tags]
-    #Poll For Update    email=${email}    pwd=${app_pass}    subject="Test Hidde"
+    Poll For Update    email=${email}    pwd=${app_pass}
+
+
     Get Messages    email=${email}    pwd=${app_pass}    subject=Test Hidde
