@@ -27,7 +27,8 @@ Email Verification
 check new email
     [Documentation]
     [Tags]
-    Poll For Update    email=${email}    pwd=${app_pass}
-
+    ${subject}=  Poll For Update    email=${email}    pwd=${app_pass}
+    Log To Console                ${subject}   
+    # @{links}=   Get Email Links    email=${email}   pwd=${app_pass}   subject=${subject}    #"EmailStart"
 
     Get Messages    email=${email}    pwd=${app_pass}    subject=Test Hidde
