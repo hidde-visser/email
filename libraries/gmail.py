@@ -1,4 +1,4 @@
-from imap_tools import MailBox
+from imap_tools import MailBox, A
 from imap_tools import AND
 from bs4 import BeautifulSoup
 import re
@@ -31,7 +31,7 @@ def poll_for_update(email, pwd, subject, folder='INBOX'):
     with MailBox('imap.gmail.com').login(email, pwd, folder) as mailbox:
         responses = mailbox.idle.wait(timeout=300)
         if responses:
-            for msg in mailbox.fetch(msg(seen=False)):
+            for msg in mailbox.fetch(A(seen=False)):
                 return (msg.date, msg.subject)
         else:
             return ('no updates in 60 sec')        
