@@ -29,7 +29,7 @@ def get_email_links(email, pwd, subject, folder='INBOX'):
 def poll_for_update(email, pwd, subject, folder='INBOX'):
 # waiting for updates 60 sec, print unseen immediately if any update
     with MailBox('imap.gmail.com').login(email, pwd, folder) as mailbox:
-        responses = mailbox.idle.wait(timeout=60)
+        responses = mailbox.idle.wait(timeout=300)
         if responses:
             for msg in mailbox.fetch(msg(seen=False)):
                 return (msg.date, msg.subject)
