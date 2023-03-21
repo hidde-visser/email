@@ -27,6 +27,6 @@ Email Verification
 check new email
     [Documentation]
     [Tags]
-    ${subject}=  Poll For Update    email=${email}    pwd=${app_pass}  urlSearchText=copado
+    ${subject}=  Poll For Update    email=${email}    pwd=${app_pass}  urlSearchText=Signing
     Log To Console                ${subject}
     GoTo         ${subject}
