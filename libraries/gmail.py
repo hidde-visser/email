@@ -34,7 +34,13 @@ def poll_for_update(email, pwd, folder='INBOX'):
             for msg in mailbox.fetch(A(seen=False)):
                 #return (msg.subject)
                 bodies = [msg.html for msg in mailbox.fetch(AND(subject=subject), reverse = True)]
-                return bodies
+
+                soup = BeautifulSoup(str(bodies))
+                links = []
+                for link in soup.findAll('a', attrs={'href': re.compile("^https://")}):
+                    links.append(link.get('href'))
+
+                return links
         else:
             return ('no updates in 60 sec')        
 
