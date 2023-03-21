@@ -40,6 +40,8 @@ def get_messages(email, pwd, subject, folder='INBOX'):
     # Get date, subject and body len of all emails from INBOX folder
     with MailBox('imap.gmail.com').login(email, pwd) as mailbox:
         for msg in mailbox.fetch():
+            print('Message subject: ', msg.subject)
+            print('Searching for subject: ', subject)
             if  subject in msg.subject:
                 # print(msg.date, msg.subject, len(msg.text or msg.html))
                     return (msg.date, msg.subject, len(msg.text or msg.html))
