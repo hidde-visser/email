@@ -43,5 +43,4 @@ def get_messages(email, pwd, subject, folder='INBOX'):
             if  subject in msg.subject:
                 # print(msg.date, msg.subject, len(msg.text or msg.html))
                 return (msg.date, msg.subject, len(msg.text or msg.html)
-                break
-        return 'nothing found'
+        return ('nothing found')
