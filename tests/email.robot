@@ -2,7 +2,7 @@
 Library                     QForce
 Library                     String
 Library                     Collections
-Library                     ../libraries/gmail.py
+Library                     ../libraries/new.py
 Test Setup                  Open Browser  about:blank  chrome
 # imap.gmail.com:993
 
