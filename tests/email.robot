@@ -29,4 +29,7 @@ check new email
     [Tags]
     ${subject}=  Poll For Update    email=${email}    pwd=${app_pass}  urlSearchText=Signing
     Log To Console                ${subject}
-    GoTo         ${subject}
+    IF    "${subject}" != "Url Not Found..."
+        GoTo         ${subject}    
+    END
+    
